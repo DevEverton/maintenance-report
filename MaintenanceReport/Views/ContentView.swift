@@ -7,10 +7,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    
+    @EnvironmentObject var equipments: Equipments
+    
     var body: some View {
-        Text("Hello, World!")
+        Text("Hello")
     }
 }
 
