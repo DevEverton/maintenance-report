@@ -15,6 +15,7 @@ struct Equipment {
     var condition: EquipmentCondition
     var runningHours: String
     var maintenanceLog: [Maintenance]
+
     
     mutating func addMaintenance(description: String, type: MaintenanceType, date: Date) {
         maintenanceLog.append(Maintenance(description: description, type: type, date: date))
@@ -27,10 +28,34 @@ struct Maintenance {
     var date: Date
 }
 
+struct EquipmentViewModel: Identifiable {
+    var id = UUID()
+    var equipment: Equipment
+    
+    var name: String {
+        return equipment.name
+    }
+    
+    var condition: String {
+        return equipment.condition.rawValue
+    }
+    var runningHours: String {
+        return equipment.runningHours
+    }
+    var maintenanceLog: [Maintenance] {
+        return equipment.maintenanceLog
+    }
+
+}
+
 class Equipments: ObservableObject {
-    @Published var list: [Equipment]
+    @Published var list: [EquipmentViewModel]
     
     init() {
-        list = [Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())])]
+        list = [
+            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())])),
+            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())])),
+            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())]))
+        ]
     }
 }

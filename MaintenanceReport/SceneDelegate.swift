@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let equipments = Equipments()
-            window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(equipments))
+            window.rootViewController = UIHostingController(rootView: AppView().environmentObject(equipments))
             self.window = window
             window.makeKeyAndVisible()
         }

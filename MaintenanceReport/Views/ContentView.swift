@@ -14,8 +14,19 @@ struct ContentView: View {
     @EnvironmentObject var equipments: Equipments
     
     var body: some View {
-        Text("Hello")
+        NavigationView {
+            VStack {
+                ForEach(equipments.list) { equipment in
+                    CardView(equipment: equipment.equipment)
+                    
+                }.navigationBarTitle("My equipments")
+                Spacer()
+            }
+            
+        }
+        
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
