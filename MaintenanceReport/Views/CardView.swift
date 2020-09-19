@@ -9,20 +9,20 @@
 import SwiftUI
 
 struct CardView: View {
-    var equipment: Equipment
+    var equipment: EquipmentViewModel
     
     var body: some View {
         HStack {
             Image(systemName: "gear")
                 .resizable()
-                .frame(width: 70, height: 70)
+                .frame(width: 50, height: 50)
                 .padding()
                 
             VStack(alignment: .leading) {
                 Text("\(equipment.name)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                Text("\(equipment.condition.rawValue)")
+                Text("\(equipment.condition)")
                     .font(.callout)
                 
             }
@@ -35,6 +35,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(equipment: Equipments().list[0].equipment)
+        CardView(equipment: Equipments().list[0])
     }
 }

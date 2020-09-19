@@ -17,11 +17,11 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 ForEach(equipments.list) { equipment in
-                    CardView(equipment: equipment.equipment)
+                    CardView(equipment: equipment)
                     
-                }.navigationBarTitle("My equipments")
+                }
                 Spacer()
-            }
+            }.navigationBarTitle("My equipments")
             
         }
         
@@ -31,6 +31,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(Equipments())
     }
 }
