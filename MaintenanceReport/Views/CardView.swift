@@ -12,23 +12,26 @@ struct CardView: View {
     var equipment: EquipmentViewModel
     
     var body: some View {
-        HStack {
-            Image(systemName: "gear")
-                .resizable()
-                .frame(width: 50, height: 50)
-                .padding()
+        NavigationLink(destination: DetailView(equipment: equipment)) {
+            HStack {
+                Image(systemName: "gear")
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .padding()
                 
-            VStack(alignment: .leading) {
-                Text("\(equipment.name)")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Text("\(equipment.condition)")
-                    .font(.callout)
+                VStack(alignment: .leading) {
+                    Text("\(equipment.name)")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    Text("\(equipment.condition)")
+                        .font(.callout)
+                    
+                }
+                Spacer()
                 
             }
-            Spacer()
-
         }
+
     
     }
 }

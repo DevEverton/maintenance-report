@@ -17,12 +17,9 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(equipments.list) { equipment in
-                    CardView(equipment: equipment)
-                    
-                }
-                Spacer()
+            List(equipments.list) { equipment in
+                CardView(equipment: equipment)
+
             }
             .navigationBarTitle("My equipments")
             .navigationBarItems(trailing: Button(action: {

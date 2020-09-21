@@ -22,6 +22,7 @@
 		5052CFF9251280CD00A1EF45 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052CFF8251280CD00A1EF45 /* Settings.swift */; };
 		5052CFFB2513C34000A1EF45 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052CFFA2513C34000A1EF45 /* CardView.swift */; };
 		5052CFFD2518B8F400A1EF45 /* ModalAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052CFFC2518B8F400A1EF45 /* ModalAddView.swift */; };
+		5052D0012518C19F00A1EF45 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D0002518C19F00A1EF45 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		5052CFF8251280CD00A1EF45 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		5052CFFA2513C34000A1EF45 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5052CFFC2518B8F400A1EF45 /* ModalAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAddView.swift; sourceTree = "<group>"; };
+		5052D0002518C19F00A1EF45 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				5052CFF625127FD000A1EF45 /* ScheduledJobs.swift */,
 				5052CFF8251280CD00A1EF45 /* Settings.swift */,
 				5052CFFA2513C34000A1EF45 /* CardView.swift */,
+				5052D0002518C19F00A1EF45 /* DetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				5052CFF9251280CD00A1EF45 /* Settings.swift in Sources */,
 				5052CFF02512324400A1EF45 /* MaintenanceType.swift in Sources */,
 				5052CFFD2518B8F400A1EF45 /* ModalAddView.swift in Sources */,
+				5052D0012518C19F00A1EF45 /* DetailView.swift in Sources */,
 				5052CFF525127EE400A1EF45 /* AppView.swift in Sources */,
 				5052CFD42512302C00A1EF45 /* SceneDelegate.swift in Sources */,
 				5052CFEE251230AF00A1EF45 /* Equipment.swift in Sources */,

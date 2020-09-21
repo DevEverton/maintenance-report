@@ -64,4 +64,8 @@ class Equipments: ObservableObject {
     init() {
         list = []
     }
+    
 }
+
+//TODO: Create Maintenance log observable object
+
