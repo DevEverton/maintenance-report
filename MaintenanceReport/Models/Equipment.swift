@@ -51,11 +51,17 @@ struct EquipmentViewModel: Identifiable {
 class Equipments: ObservableObject {
     @Published var list: [EquipmentViewModel]
     
+    func addEquipment(equipment: Equipment) {
+        list.append(EquipmentViewModel(equipment: equipment))
+    }
+    
+    func removeEquipment(removeID: UUID) {
+        if let index = list.firstIndex(where: { $0.id == removeID}) {
+            list.remove(at: index)
+        }
+    }
+    
     init() {
-        list = [
-            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())])),
-            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())])),
-            EquipmentViewModel(equipment: Equipment(name: "Purifier", condition: .veryGood, runningHours: "45672", maintenanceLog: [Maintenance(description: "Replaced friction pads.", type: .corrective ,date: Date())]))
-        ]
+        list = []
     }
 }
