@@ -13,8 +13,42 @@ struct DetailView: View {
     let equipment: EquipmentViewModel
     
     var body: some View {
-        VStack {
-            Text(equipment.name)
+        VStack(alignment: .leading) {
+            HStack {
+                Text(equipment.name)
+                    .fontWeight(.bold)
+                    .padding()
+                    .font(.largeTitle)
+                Spacer()
+                Button(action: {}){
+                    Image(systemName: "plus")
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }.padding()
+            }
+                
+
+            ZStack {
+                Rectangle()
+                    .fill(Color(red: 0.86, green: 0.80, blue: 0.74))
+                    .frame(width: 350, height: 70)
+                    .cornerRadius(8)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Status: \(equipment.condition)")
+                            .fontWeight(.thin)
+                        Text("Hours: \(equipment.runningHours)")
+                            .fontWeight(.thin)
+                    }.padding(.leading, 20)
+                    Spacer()
+                }
+            }
+            Text("Maintenance History")
+                .font(.headline)
+                .padding()
+            List(equipment.maintenanceLog) { maintenance in
+                Text(maintenance.description)
+            }
         }
     }
 }

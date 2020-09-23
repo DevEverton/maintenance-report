@@ -14,18 +14,43 @@ struct Equipment {
     var name: String
     var condition: EquipmentCondition
     var runningHours: String
-    var maintenanceLog: [Maintenance]
+    var maintenanceLog: [MaintenanceViewModel]
 
-    
-    mutating func addMaintenance(description: String, type: MaintenanceType, date: Date) {
-        maintenanceLog.append(Maintenance(description: description, type: type, date: date))
-    }
 }
 
 struct Maintenance {
     var description: String
     var type: MaintenanceType
     var date: Date
+}
+
+struct MaintenanceViewModel: Identifiable {
+    var id = UUID()
+    var maintenance: Maintenance
+    
+    var description: String {
+        return maintenance.description
+    }
+    
+    var type: MaintenanceType {
+        return maintenance.type
+    }
+    
+    var date: Date {
+        return maintenance.date
+    }
+}
+
+class Maintenances: ObservableObject {
+    @Published var list: [MaintenanceViewModel]
+    
+    func addEquipment(maintenance: Maintenance) {
+        list.append(MaintenanceViewModel(maintenance: maintenance))
+    }
+    
+    init() {
+        list = []
+    }
 }
 
 struct EquipmentViewModel: Identifiable {
@@ -42,7 +67,7 @@ struct EquipmentViewModel: Identifiable {
     var runningHours: String {
         return equipment.runningHours
     }
-    var maintenanceLog: [Maintenance] {
+    var maintenanceLog: [MaintenanceViewModel] {
         return equipment.maintenanceLog
     }
 
@@ -67,5 +92,4 @@ class Equipments: ObservableObject {
     
 }
 
-//TODO: Create Maintenance log observable object
 
