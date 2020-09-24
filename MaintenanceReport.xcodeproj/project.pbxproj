@@ -23,6 +23,7 @@
 		5052CFFB2513C34000A1EF45 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052CFFA2513C34000A1EF45 /* CardView.swift */; };
 		5052CFFD2518B8F400A1EF45 /* ModalAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052CFFC2518B8F400A1EF45 /* ModalAddView.swift */; };
 		5052D0012518C19F00A1EF45 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D0002518C19F00A1EF45 /* DetailView.swift */; };
+		5052D005251C494500A1EF45 /* AddMaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5052D004251C494500A1EF45 /* AddMaintenanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5052CFFA2513C34000A1EF45 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		5052CFFC2518B8F400A1EF45 /* ModalAddView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAddView.swift; sourceTree = "<group>"; };
 		5052D0002518C19F00A1EF45 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5052D004251C494500A1EF45 /* AddMaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaintenanceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				5052CFF8251280CD00A1EF45 /* Settings.swift */,
 				5052CFFA2513C34000A1EF45 /* CardView.swift */,
 				5052D0002518C19F00A1EF45 /* DetailView.swift */,
+				5052D004251C494500A1EF45 /* AddMaintenanceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				5052CFD22512302C00A1EF45 /* AppDelegate.swift in Sources */,
 				5052CFD72512302C00A1EF45 /* MaintenanceReport.xcdatamodeld in Sources */,
+				5052D005251C494500A1EF45 /* AddMaintenanceView.swift in Sources */,
 				5052CFD92512302C00A1EF45 /* ContentView.swift in Sources */,
 				5052CFF725127FD000A1EF45 /* ScheduledJobs.swift in Sources */,
 				5052CFF9251280CD00A1EF45 /* Settings.swift in Sources */,

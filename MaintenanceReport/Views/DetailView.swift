@@ -11,6 +11,8 @@ import SwiftUI
 struct DetailView: View {
 
     let equipment: EquipmentViewModel
+    @State var isPresentingModal = false
+
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -20,11 +22,18 @@ struct DetailView: View {
                     .padding()
                     .font(.largeTitle)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    self.isPresentingModal.toggle()
+
+                }){
                     Image(systemName: "plus")
                         .resizable()
                         .frame(width: 20, height: 20)
                 }.padding()
+                .sheet(isPresented: $isPresentingModal ){
+                    AddMaintenanceView(equipment: self.equipment)
+                }
+
             }
                 
 

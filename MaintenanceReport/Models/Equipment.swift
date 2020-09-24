@@ -18,41 +18,6 @@ struct Equipment {
 
 }
 
-struct Maintenance {
-    var description: String
-    var type: MaintenanceType
-    var date: Date
-}
-
-struct MaintenanceViewModel: Identifiable {
-    var id = UUID()
-    var maintenance: Maintenance
-    
-    var description: String {
-        return maintenance.description
-    }
-    
-    var type: MaintenanceType {
-        return maintenance.type
-    }
-    
-    var date: Date {
-        return maintenance.date
-    }
-}
-
-class Maintenances: ObservableObject {
-    @Published var list: [MaintenanceViewModel]
-    
-    func addEquipment(maintenance: Maintenance) {
-        list.append(MaintenanceViewModel(maintenance: maintenance))
-    }
-    
-    init() {
-        list = []
-    }
-}
-
 struct EquipmentViewModel: Identifiable {
     var id = UUID()
     var equipment: Equipment
@@ -91,5 +56,43 @@ class Equipments: ObservableObject {
     }
     
 }
+
+struct Maintenance {
+    var description: String
+    var type: MaintenanceType
+    var date: Date
+}
+
+struct MaintenanceViewModel: Identifiable {
+    var id = UUID()
+    var maintenance: Maintenance
+    
+    var description: String {
+        return maintenance.description
+    }
+    
+    var type: MaintenanceType {
+        return maintenance.type
+    }
+    
+    var date: Date {
+        return maintenance.date
+    }
+}
+
+class MaintenanceLog: ObservableObject {
+    @Published var list: [MaintenanceViewModel]
+    
+    
+    func addEquipment(maintenance: Maintenance) {
+        list.append(MaintenanceViewModel(maintenance: maintenance))
+    }
+    
+    init() {
+        list = []
+    }
+}
+
+
 
 
