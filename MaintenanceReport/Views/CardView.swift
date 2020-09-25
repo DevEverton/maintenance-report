@@ -10,9 +10,10 @@ import SwiftUI
 
 struct CardView: View {
     var equipment: EquipmentViewModel
+    @ObservedObject var equipments: Equipments
     
     var body: some View {
-        NavigationLink(destination: DetailView(equipment: equipment)) {
+        NavigationLink(destination: DetailView(equipment: equipment, equipments: equipments)) {
             HStack {
                 Image(systemName: "gear")
                     .resizable()
@@ -38,6 +39,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(equipment: Equipments().list[0])
+        CardView(equipment: Equipments().list[0], equipments: Equipments())
     }
 }

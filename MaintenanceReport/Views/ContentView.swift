@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(equipments.list) { equipment in
-                CardView(equipment: equipment)
+                CardView(equipment: equipment, equipments: self.equipments)
 
             }
             .navigationBarTitle("My equipments")

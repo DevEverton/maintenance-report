@@ -33,8 +33,13 @@ struct EquipmentViewModel: Identifiable {
         return equipment.runningHours
     }
     var maintenanceLog: [MaintenanceViewModel] {
-        return equipment.maintenanceLog
+        get { equipment.maintenanceLog }
+        set { equipment.maintenanceLog = newValue }
     }
+    
+//    mutating func addMaintenance(maintenance: MaintenanceViewModel) {
+//        self.equipment.maintenanceLog.append(maintenance)
+//    }
 
 }
 
@@ -48,6 +53,12 @@ class Equipments: ObservableObject {
     func removeEquipment(removeID: UUID) {
         if let index = list.firstIndex(where: { $0.id == removeID}) {
             list.remove(at: index)
+        }
+    }
+    
+    func addMaintenance(_ maintenance: MaintenanceViewModel, to equipmentWithId: UUID){
+        if let index = list.firstIndex(where: { $0.id == equipmentWithId }) {
+            list[index].maintenanceLog.append(maintenance)
         }
     }
     
@@ -80,18 +91,21 @@ struct MaintenanceViewModel: Identifiable {
     }
 }
 
-class MaintenanceLog: ObservableObject {
-    @Published var list: [MaintenanceViewModel]
-    
-    
-    func addEquipment(maintenance: Maintenance) {
-        list.append(MaintenanceViewModel(maintenance: maintenance))
-    }
-    
-    init() {
-        list = []
-    }
-}
+//TODO: Create setter for maintenancelog and add publisher for equipment inside MaintenanceLog Class
+//
+//class MaintenanceLog: ObservableObject {
+//    //@Published var list: [MaintenanceViewModel]
+//    @Published var equipment: EquipmentViewModel
+//
+//    func addEquipment(maintenance: MaintenanceViewModel, equipment: EquipmentViewModel) {
+//        //list.append(MaintenanceViewModel(maintenance: maintenance))
+//        self.equipment.maintenanceLog.append(maintenance)
+//    }
+//
+//    init(equipment: EquipmentViewModel) {
+//        self.equipment = equipment
+//    }
+//}
 
 
 

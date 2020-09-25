@@ -11,6 +11,7 @@ import SwiftUI
 struct DetailView: View {
 
     let equipment: EquipmentViewModel
+    @ObservedObject var equipments: Equipments
     @State var isPresentingModal = false
 
     
@@ -31,7 +32,7 @@ struct DetailView: View {
                         .frame(width: 20, height: 20)
                 }.padding()
                 .sheet(isPresented: $isPresentingModal ){
-                    AddMaintenanceView(equipment: self.equipment)
+                    AddMaintenanceView(equipments: self.equipments, equipment: self.equipment)
                 }
 
             }
@@ -64,6 +65,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(equipment: EquipmentViewModel(equipment:  Equipment(name: "Purifier", condition: .good, runningHours: "345", maintenanceLog: [])))
+        DetailView(equipment: EquipmentViewModel(equipment:  Equipment(name: "Purifier", condition: .good, runningHours: "345", maintenanceLog: [])), equipments: Equipments())
     }
 }
