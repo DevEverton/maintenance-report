@@ -11,17 +11,21 @@ import SwiftUI
 struct AddMaintenanceView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var equipments: Equipments
-
     var equipment: EquipmentViewModel
 
     var body: some View {
         VStack {
             Text("Add maintenance to: \(equipment.name)")
+            if equipment.maintenanceLog.count > 0 {
+                Text("\(equipment.maintenanceLog[0].description)")
+
+            }
             Button(action: {
                 self.equipments.addMaintenance(MaintenanceViewModel(maintenance: Maintenance(description: "Testing", type: .predictive, date: Date())), to: self.equipment.id)
                 print(self.equipment.maintenanceLog.count)
             }){
                 Image(systemName: "gear")
+                
             }
         }
     }
